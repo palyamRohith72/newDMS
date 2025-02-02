@@ -11,7 +11,7 @@ for i in sessionList:
         st.session_state[i]=None
 # --- Authenticator Class ---
 class Authenticator:
-    def __init__(self, mongo_uri='mongodb://localhost:27017/', db_name='authDB'):
+    def __init__(self, mongo_uri=st.secrets['database']['clientLink'], db_name='authDB'):
         # MongoDB connection
         self.client = MongoClient(mongo_uri)
         self.db = self.client["StudentsDB"]
